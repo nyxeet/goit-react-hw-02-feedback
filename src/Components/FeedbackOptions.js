@@ -1,10 +1,12 @@
 import React from 'react';
 
-const FeedbackOptions = ({ handleClickButton }) => (
+const FeedbackOptions = ({ options, handleClickButton }) => (
   <>
-    <button onClick={() => handleClickButton('good')}>Good</button>
-    <button onClick={() => handleClickButton('neutral')}>Neutral</button>
-    <button onClick={() => handleClickButton('bad')}>Bad</button>
+    {options.map(elem => (
+      <button key={elem} onClick={() => handleClickButton(elem)}>
+        {elem}
+      </button>
+    ))}
   </>
 );
 
