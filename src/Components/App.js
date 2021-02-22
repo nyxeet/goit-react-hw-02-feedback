@@ -10,6 +10,7 @@ class App extends React.Component {
     neutral: 0,
     bad: 0,
   };
+
   handleClickButton = type => {
     this.setState(prevState => {
       return {
@@ -17,15 +18,18 @@ class App extends React.Component {
       };
     });
   };
+
   countTotalFeedback = () => {
     return Object.values(this.state).reduce(
       (total, item) => (total += item),
       0,
     );
   };
+
   countPositiveFeedbackPercentage = (total, positiveFeedback) => {
     return (positiveFeedback / total) * 100;
   };
+
   render() {
     const total = this.countTotalFeedback();
     const positiveFeedbacks = this.countPositiveFeedbackPercentage(
@@ -38,7 +42,7 @@ class App extends React.Component {
           <FeedbackOptions
             options={['good', 'bad', 'neutral']}
             handleClickButton={this.handleClickButton}
-          ></FeedbackOptions>
+          />
         </Section>
         <Section title="Statistics">
           {total !== 0 ? (

@@ -1,15 +1,15 @@
 import React from 'react';
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
-  <>
-    <p>Good:{good}</p>
-    <p>Neutral:{neutral}</p>
-    <p>Bad:{bad}</p>
-    <p>Total:{total}</p>
-    <p>
+  <ul>
+    <li>Good:{good}</li>
+    <li>Neutral:{neutral}</li>
+    <li>Bad:{bad}</li>
+    <li>Total:{total}</li>
+    <li>
       Positive feedback: {total !== 0 ? Math.floor(positivePercentage) : 0}%
-    </p>
-  </>
+    </li>
+  </ul>
 );
 
 export default Statistics;
